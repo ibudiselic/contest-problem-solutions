@@ -1,0 +1,23 @@
+Solutions to some algorithmic problems from Topcoder, USACO and ProjectEuler. For actual problem texts, visit the sites themselves.
+
+Topcoder (all C++ code)
+**************************************************
+/tc bef160
+	Only a few problems before SRM160... the Arena was not very friendly back then so it's a pain solving those - and there are plenty of newer ones to solve so there's really no point :)
+
+/tc 160+
+	Solutions to most problems since SRM160. Since some of this is very old code (4+ years), style varies somewhat. Also, a lot of the solutions are based on ideas from the editorials (especially div1 hards and especially solutions from earlier SRM-s).
+
+/tc tournaments
+	Some solutions to TCO and TCCO problems, but most are missing.
+
+/TCHS
+	TC high school problems and tournaments.
+	
+USACO (all C++ code)
+**************************************************
+Working my way back towards completing this fun course after forgetting my old password :'(
+
+ProjectEuler (Mostly Python code with some C++ for "bad" algorithms, earlier problems are Python 2.x, newer ones are 3.x)
+**************************************************
+Less algorithmic and more mathematical problems... tbh not nearly as fun for me, but good for learning math facts :).

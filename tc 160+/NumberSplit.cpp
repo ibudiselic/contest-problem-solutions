@@ -1,0 +1,85 @@
+#include <algorithm>
+#include <cassert>
+#include <cstdio>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <cstring>
+#include <set>
+
+using namespace std;
+
+set<int> next[100001];
+int dp[100001];
+int go(int x) {
+	if (x < 10)
+		return 1;
+
+	if (dp[x] != -1)
+		return dp[x];
+
+	dp[x] = 0;
+	for (set<int>::const_iterator it=next[x].begin(); it!=next[x].end(); ++it)
+		dp[x] = max(dp[x], 1+go(*it));
+
+	return dp[x];
+}
+class NumberSplit {
+	public:
+	int longestSequence(int start) {
+		memset(dp, 0xff, sizeof dp);
+
+		for (int i=0; i<100001; ++i)
+			next[i].clear();
+
+		for (int i=0; i<10; ++i)
+			next[i].insert(i);
+		for (int i=10; i<100001; ++i) {
+			int x = i/10;
+			int d = i%10;
+			int pot10 = 1;
+			do {
+				for (set<int>::const_iterator it=next[x].begin(); it!=next[x].end(); ++it)
+					next[i].insert(d * *it);
+				next[i].insert(d * x);
+
+				pot10 *= 10;
+				d += pot10*(x%10);
+				x /= 10;
+			} while (x > 0);
+		}
+
+		return go(start);
+	}
+
+
+
+
+
+
+
+
+// BEGIN CUT HERE
+	public:
+	void run_test(int Case) { if ((Case == -1) || (Case == 0)) test_case_0(); if ((Case == -1) || (Case == 1)) test_case_1(); if ((Case == -1) || (Case == 2)) test_case_2(); if ((Case == -1) || (Case == 3)) test_case_3(); if ((Case == -1) || (Case == 4)) test_case_4(); }
+	private:
+	template <typename T> string print_array(const vector<T> &V) { ostringstream os; os << "{ "; for (typename vector<T>::const_iterator iter = V.begin(); iter != V.end(); ++iter) os << '\"' << *iter << "\","; os << " }"; return os.str(); }
+	void verify_case(int Case, const int &Expected, const int &Received) { cerr << "Test Case #" << Case << "..."; if (Expected == Received) cerr << "PASSED" << endl; else { cerr << "FAILED" << endl; cerr << "\tExpected: \"" << Expected << '\"' << endl; cerr << "\tReceived: \"" << Received << '\"' << endl; } }
+	void test_case_0() { int Arg0 = 6; int Arg1 = 1; verify_case(0, Arg1, longestSequence(Arg0)); }
+	void test_case_1() { int Arg0 = 97; int Arg1 = 4; verify_case(1, Arg1, longestSequence(Arg0)); }
+	void test_case_2() { int Arg0 = 234; int Arg1 = 5; verify_case(2, Arg1, longestSequence(Arg0)); }
+	void test_case_3() { int Arg0 = 876; int Arg1 = 7; verify_case(3, Arg1, longestSequence(Arg0)); }
+	void test_case_4() { int Arg0 = 99999; int Arg1 = 29; verify_case(4, Arg1, longestSequence(Arg0)); }
+
+// END CUT HERE
+
+};
+
+// BEGIN CUT HERE
+int main()
+    {
+    NumberSplit ___test;
+    ___test.run_test(-1);
+    }
+// END CUT HERE
