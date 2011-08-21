@@ -1,4 +1,4 @@
-Solutions to some algorithmic problems from Topcoder, USACO and ProjectEuler. For actual problem texts, visit the sites themselves.
+Solutions to some algorithmic problems from Topcoder, USACO, Codeforces and ProjectEuler. For actual problem texts, visit the sites themselves.
 
 Topcoder (all C++ code)
 **************************************************
@@ -17,6 +17,10 @@ Topcoder (all C++ code)
 USACO (all C++ code)
 **************************************************
 Working my way back towards completing this fun course after forgetting my old password :'(
+
+Codeforces (all C++ code)
+**************************************************
+A relatively new competition site, only started doing it recently.
 
 ProjectEuler (Mostly Python code with some C++ for "bad" algorithms, earlier problems are Python 2.x, newer ones are 3.x)
 **************************************************
