@@ -1,5 +1,5 @@
 //# wolves, grid, coordinate systems, transformation, important
-//# => Notice that if we transfer the problem into the x
+//# => Notice that if we transfer the problem into the x+y, x-y system any move changes both the coordinates so any pair of changes in the two directions uniquely determines a move. This makes the moves along each axes independent as we know the number of moves (it's m for both axes).
 #include <algorithm>
 #include <cassert>
 #include <cctype>
